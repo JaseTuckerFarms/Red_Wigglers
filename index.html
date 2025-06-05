@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worms for Sale</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 20px;
+        flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+    }
+
+    section {
+        margin: 20px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        width: 100%;
+        max-width: 350px; /* Set max width for better control */
+    }
+
+    .product {
+        margin: 15px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: inline-block;
+        width: 100%;
+        max-width: 300px; /* Max width for the products */
+        position: relative;
+        transition: transform 0.3s ease; /* Add a hover effect */
+    }
+
+    .product:hover {
+        transform: scale(1.05); /* Slightly enlarge the product on hover */
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 5px;
+    }
+
+    .product:hover .overlay {
+        opacity: 1;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+    }
+
+    input, textarea {
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* About Section */
+    #about {
+        background-color: #e9f7e9;
+        padding: 20px;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+
+    #about h2 {
+        color: #4CAF50;
+    }
+
+    #about p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product, section {
+            max-width: 100%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fresh Worms for Sale</h1>
+        <p>High-quality worms for fishing, composting, and gardening.</p>
+    </header>
+
+    <div class="main">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Fresh Worms, we are dedicated to providing high-quality worms for a variety of uses. Whether you're composting to enrich your soil or fishing for your next big catch, we offer the perfect worms to meet your needs. Our Red Wigglers are known for their superior composting abilities, while our Nightcrawlers are great for fishing and aerating your garden. We take pride in our product, and we're committed to ensuring you get the best worms at the best prices.</p>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <h2>Our Worms</h2>
+            <div class="product">
+                <img src="worms.jpg" alt="Red Wigglers">
+                <div class="overlay">
+                    <p>Perfect for composting and improving soil!</p>
+                </div>
+                <h3>Red Wigglers</h3>
+                <p>Great for composting and improving soil.</p>
+                <p><strong>$10 per 100 worms</strong></p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="your-paypal-email@example.com">
+                    <input type="hidden" name="item_name" value="Red Wigglers (100 Worms)">
+                    <input type="hidden" name="amount" value="10.00">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="button_subtype" value="services">
+                    <input type="hidden" name="no_note" value="1">
+                    <input type="hidden" name="no_shipping" value="2">
+                    <input type="hidden" name="rm" value="1">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" id="quantity" value="1" min="1">
+                    <input type="submit" value="Buy Now with PayPal">
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+    function orderNow(product) {
+        const email = "your-email@example.com"; // Replace with your email
+        const subject = "Order Request: " + product;
+        const body = "Hello, I would like to order " + product + ". Please provide more details.";
+        window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+    </script>
+</body>
+</html>
